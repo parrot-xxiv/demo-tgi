@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'HKNova-Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: url(/fonts/HKNova-Regular.ttf) format('truetype');
+    }
+}
+
+.rotate-y-180 {
+    transform: rotateY(-180deg) translate(200px, -50px);
+}
+
+.flip {
+    transform: rotateY(0deg) translate(0);
+    opacity: 1;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}

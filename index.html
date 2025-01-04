@@ -1,14 +1,308 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link href="./css/tailwind.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="font-bold text-2xl">HELLO TAILWIND</div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo | Trends Group, Inc.</title>
+    <!-- Rellax.js -->
+    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link href="./css/tailwind.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-900 text-white font-['HKNova-Regular']">
+    <header>
+        <!-- Fullscreen Navigation -->
+        <nav class="fixed z-20 inset-0 h-screen w-full nav-container scale-0">
+            <ul class="flex h-full w-full flex-col md:flex-row">
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all duration-1000 bg-black text-white">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#home">Home</a>
+                </li>
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all delay-[250ms] duration-1000 bg-yellow-500 text-black">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#commitment">Commitment</a>
+                </li>
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all delay-[500ms] duration-1000 bg-black text-white">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#history">History</a>
+                </li>
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all delay-[750ms] duration-1000 bg-yellow-500 text-black">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#values">Values</a>
+                </li>
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all delay-[1000ms] duration-1000 bg-black text-white">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#affiliates">Affiliates</a>
+                </li>
+                <li
+                    class="menu-item flex origin-left backface-hidden opacity-0 rotate-y-180 flex-1 transition-all delay-[1250ms] duration-1000 bg-yellow-500 text-black">
+                    <a class="w-full h-full flex items-center justify-center uppercase hover:animate-pulse" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Burger Icon -->
+        <div class="fixed z-30 right-0 top-0 p-5 flex flex-col items-center cursor-pointer" id="burger-icon">
+            <div class="w-6 h-0.5 bg-white mb-1 transition-all" id="top-bar"></div>
+            <div class="w-6 h-0.5 bg-white mb-1 transition-all" id="middle-bar"></div>
+            <div class="w-6 h-0.5 bg-white transition-all" id="bottom-bar"></div>
+        </div>
+    </header>
+    <!-- Banner -->
+    <section id="home" class="relative md:h-screen flex flex-col items-center justify-center overflow-hidden">
+        <video class="h-full w-full object-cover" autoplay muted loop>
+            <source src="/images/tgi-web-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Section 1 -->
+    <section id="commitment" class="section-one relative h-[50vh] md:h-screen overflow-hidden flex">
+        <div class="rellax absolute inset-0 bg-cover bg-no-repeat bg-center" data-rellax-xs-speed="0"
+            data-rellax-mobile-speed="-2" data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-5"
+            style="background-image: url('/images/tgi-about.jpg');">
+        </div>
+        <div class="content-one relative w-full md:w-1/2 h-full z-10 bg-slate-900/50 border-r-2 border-yellow-500 p-10">
+            <h1 class="text-2xl md:text-3xl font-bold uppercase text-center">Our Commitment</h1>
+            <p class="mt-2 md:mt-4 text-xs text-justify text-gray-300">
+                Equipped with a vision and the right values, we are expanding and reaching new heights as a powerful,
+                nurturing, and timeless conglomerate. We are moving towards a more promising future to cultivate
+                opportunities and provide a customer experience like no other.
+
+                Since 2001, Trends Group, Inc. (TGI) promises not only to give their business partners the satisfaction
+                they deserve, but also aims to elevate itself to be part of an evolving society.
+
+                TGI is ISO-certified. We were granted two certificates: (1) ISO 9001:2015 Quality Management System, and
+                (2) ISO/IEC 27001:2013 Information Security Management System. With these certifications, we can
+                guarantee our partners and affiliates quality service that meets international standards.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="history"
+        class="section-two flex relative h-[50vh] md:h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div class="rellax absolute inset-0 bg-cover bg-bottom" data-rellax-xs-speed="0" data-rellax-mobile-speed="-1"
+            data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-5"
+            style="background-image: url('/images/tgi-history.jpg');"></div>
+        <div class="content-two self-end relative w-full md:w-[calc(50%+2px)] h-full z-10 bg-slate-900/50 border-l-2 border-yellow-500 p-10">
+            <h1 class="text-2xl md:text-3xl font-bold uppercase text-center">Our Commitment</h1>
+            <p class="mt-2 md:mt-4 text-xs text-justify text-gray-300">
+                Equipped with a vision and the right values, we are expanding and reaching new heights as a powerful,
+                nurturing, and timeless conglomerate. We are moving towards a more promising future to cultivate
+                opportunities and provide a customer experience like no other.
+
+                Since 2001, Trends Group, Inc. (TGI) promises not only to give their business partners the satisfaction
+                they deserve, but also aims to elevate itself to be part of an evolving society.
+
+                TGI is ISO-certified. We were granted two certificates: (1) ISO 9001:2015 Quality Management System, and
+                (2) ISO/IEC 27001:2013 Information Security Management System. With these certifications, we can
+                guarantee our partners and affiliates quality service that meets international standards.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="values" class="section-three relative h-[50vh] md:h-screen overflow-hidden flex">
+        <div class="rellax absolute inset-0 bg-cover bg-no-repeat bg-right" data-rellax-xs-speed="0"
+            data-rellax-mobile-speed="-2" data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-5"
+            style="background-image: url('/images/tgi-mvv.jpg');">
+        </div>
+        <div class="content-three relative w-full md:w-1/2 h-full z-10 bg-slate-900/60 border-r-2 border-yellow-500 p-10">
+            <h1 class="text-2xl md:text-3xl font-bold uppercase text-center">Our Commitment</h1>
+            <p class="mt-2 md:mt-4 text-xs text-justify text-gray-300">
+                Equipped with a vision and the right values, we are expanding and reaching new heights as a powerful,
+                nurturing, and timeless conglomerate. We are moving towards a more promising future to cultivate
+                opportunities and provide a customer experience like no other.
+
+                Since 2001, Trends Group, Inc. (TGI) promises not only to give their business partners the satisfaction
+                they deserve, but also aims to elevate itself to be part of an evolving society.
+
+                TGI is ISO-certified. We were granted two certificates: (1) ISO 9001:2015 Quality Management System, and
+                (2) ISO/IEC 27001:2013 Information Security Management System. With these certifications, we can
+                guarantee our partners and affiliates quality service that meets international standards.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="affiliates" class="section-four relative h-[50vh] md:h-screen overflow-hidden flex">
+        <div class="rellax absolute inset-0 bg-cover bg-no-repeat bg-center" data-rellax-xs-speed="0"
+            data-rellax-mobile-speed="-2" data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-5"
+            style="background-image: url('/images/tgi-subs.jpg');">
+        </div>
+        <div class="content-four text-xs md:text-md relative w-full h-full z-10 bg-slate-900/60 p-10">
+            <h1 class="text-2xl mb-10 md:text-3xl font-bold uppercase text-center">Our Commitment</h1>
+            <div class="flex flex-col md:flex-row">
+                <div class="flex flex-1 mb-5">
+                    <img class="w-20" src="/images/affiliate-trends.png" alt="Trends">
+                    <div>
+                        <h3>Trends</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium deserunt! Ab officia
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-1 mb-5">
+                    <img class="w-20" src="/images/affiliate-trends.png" alt="Trends">
+                    <div>
+                        <h3>Trends</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium deserunt! Ab officia
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="flex flex-1 mb-5">
+                    <img class="w-20" src="/images/affiliate-trends.png" alt="Trends">
+                    <div>
+                        <h3>Trends</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium deserunt! Ab officia
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-1 mb-5">
+                    <img class="w-20" src="/images/affiliate-trends.png" alt="Trends">
+                    <div>
+                        <h3>Trends</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, laudantium deserunt! Ab officia
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Section 6 -->
+    <section class="section-four relative h-[50vh] md:h-screen overflow-hidden flex">
+        <div class="rellax absolute inset-0 bg-cover bg-no-repeat bg-center" data-rellax-xs-speed="0"
+            data-rellax-mobile-speed="-2" data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-5"
+            style="background-image: url('/images/tgi-corporate.jpg');">
+        </div>
+        <div
+            class="content-four flex flex-col justify-center text-xs md:text-md relative w-full h-full z-10 bg-slate-900/60 p-10">
+            <h1 class="text-2xl mb-10 md:text-3xl font-bold uppercase text-center">Be part of our team</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus distinctio, reprehenderit aut illum vero
+                vitae ullam tempore eaque. Ducimus sequi deleniti alias rerum eius veniam eos voluptatum ut dolorum
+                optio.
+            </p>
+            <button>View our positions</button>
+        </div>
+    </section>
+    <footer class="px-10 py-5">
+        Footer
+    </footer>
+    <script>
+        const burgerIcon = document.getElementById('burger-icon');
+        const topBar = document.getElementById('top-bar');
+        const middleBar = document.getElementById('middle-bar');
+        const bottomBar = document.getElementById('bottom-bar');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const anchorItems = document.querySelectorAll('a');
+        const navContainer = document.querySelector('.nav-container');
+        let isAnimating = false; // Prevent double-click during animation
+
+        anchorItems.forEach(el => {
+            el.addEventListener('click', animateMenu)
+        })
+
+        function animateMenu() {
+            if (isAnimating) return;
+            isAnimating = true;
+            menuItems.forEach((item) => {
+                item.classList.toggle('flip');
+            });
+            // Toggle menu visibility
+            if (navContainer.classList.contains('scale-100')) {
+                // Wait for animations to finish before hiding nav container
+                setTimeout(() => {
+                    navContainer.classList.remove('scale-100');
+                    isAnimating = false;
+                }, 2500); // Match duration to Tailwind's delay and animation duration
+            } else {
+                navContainer.classList.add('scale-100');
+                // Match duration as well  
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 2500);
+            }
+
+            // Animate the burger icon
+            topBar.classList.toggle('rotate-45');
+            topBar.classList.toggle('translate-y-[12px]');
+            middleBar.classList.toggle('opacity-0');
+            bottomBar.classList.toggle('-rotate-45');
+            topBar.classList.toggle('bg-black')
+            middleBar.classList.toggle('bg-black')
+            bottomBar.classList.toggle('bg-black')
+
+        }
+        burgerIcon.addEventListener('click', animateMenu);
+    </script>
+    <script>
+        // Initialize Rellax.js
+        new Rellax('.rellax', {
+            center: true, // Keeps the parallax elements centered in the viewport
+            breakpoints: [576, 768, 1201]
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        var contentOne = document.querySelector('.content-one');
+        var sectionOne = document.querySelector('.section-one');
+        gsap.fromTo(contentOne, {
+            x: "-50%",
+            opacity: 0
+        }, {
+            x: "0",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: sectionOne,
+                start: "top 50%",
+                end: "bottom 50%",
+                markers: true,
+            }
+        });
+
+        var contentTwo = document.querySelector('.content-two')
+        var sectionTwo = document.querySelector('.section-two');
+        gsap.fromTo(contentTwo, {
+            x: "50%",
+            opacity: 0
+        }, {
+            x: "0",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: sectionTwo,
+                start: "top 50%",
+                end: "bottom 50%",
+                markers: true,
+            }
+        });
+
+        var contentThree = document.querySelector('.content-three');
+        var sectionThree = document.querySelector('.section-three');
+        console.log(contentThree, sectionThree)
+        gsap.fromTo(contentThree, {
+            x: "-50%",
+            opacity: 0
+        }, {
+            x: "0",
+            opacity: 1,
+            scrollTrigger: {
+                trigger: sectionThree,
+                start: "top 50%",
+                end: "bottom 50%",
+                markers: true,
+            }
+        });
+
+    </script>
+</body>
+
 </html>
