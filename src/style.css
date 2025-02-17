@@ -7,7 +7,8 @@
         font-family: 'HKNova-Regular';
         font-style: normal;
         font-weight: normal;
-        src: url(/fonts/HKNova-Regular.ttf) format('truetype');
+        src: url(/demo-tgi/fonts/HKNova-Regular.ttf) format('truetype');
+        /* src: url(/fonts/HKNova-Regular.ttf) format('truetype'); */
     }
 }
 
